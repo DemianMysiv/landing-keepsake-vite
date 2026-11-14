@@ -1,0 +1,30 @@
+@use "../abstracts" as *;
+
+:root {
+  @each $name, $value in $colors {
+    --color-#{$name}: #{$value};
+  }
+
+  @each $name, $value in $fonts {
+    --font-#{$name}: #{$value};
+  }
+
+  --gap-section: 56px;
+  --gap-container: 20px;
+  --size-header: 60px;
+  --size-icon-mobile: 72px;
+  --size-icon-desktop: 96px;
+  --size-back-to-top: 44px;
+  --gap-grid: 12px;
+  --gap-grid-desktop: 14px;
+
+  @include mq(md) {
+    --gap-section: 72px;
+    --gap-container: 40px;
+  }
+
+  @include mq(lg) {
+    --gap-section: 90px;
+    --gap-container: 90px;
+  }
+}
