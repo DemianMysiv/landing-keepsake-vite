@@ -1,8 +1,12 @@
 mixin picture(name, ext, alt, isLazy = true)
   picture
-    source(srcset="../assets/images/${name}.webp" type="image/webp")
-    img(
-      src="../assets/images/${name}.${ext}" 
-      alt=alt 
+    source(type="image/avif" srcset=`../assets/images/${name}-400.avif 400w, ../assets/images/${name}-800.avif 800w` sizes="(min-width: 1280px) 357px, (min-width: 768px) 50vw, 100vw")
+    source(type="image/webp" srcset=`../assets/images/${name}-400.webp 400w, ../assets/images/${name}-800.webp 800w` sizes="(min-width: 1280px) 357px, (min-width: 768px) 50vw, 100vw")
+    img.work-card__img(
+      src=`../assets/images/${name}-800.${ext}`
+      alt=alt
+      width="800"
+      height="632"
       loading=isLazy ? "lazy" : "eager"
+      decoding="async"
     )&attributes(attributes)
