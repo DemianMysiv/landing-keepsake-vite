@@ -1,0 +1,8 @@
+mixin picture(name, ext, alt, isLazy = true)
+  picture
+    source(srcset="../assets/images/${name}.webp" type="image/webp")
+    img(
+      src="../assets/images/${name}.${ext}" 
+      alt=alt 
+      loading=isLazy ? "lazy" : "eager"
+    )&attributes(attributes)

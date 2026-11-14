@@ -1,4 +1,31 @@
 extends ../layouts/main.pug
 
+append meta
+  meta(name="description" content="Keepsake - Digital & Branding Agency")
+
+append styles
+  //- link(rel="preload" href="../assets/fonts/Oswald-Regular.woff2" as="font" type="font/woff2" crossorigin)
+
+block title
+  title Keepsake | Portfolio
+
 block content
-  h1 Keepsake Landing
+  section.hero
+    h1 We're Keepsake
+    .hero__actions
+      +btn('See our works', '#works')(class="btn--accent")
+      +btn('Get in touch', '#contact')
+        +icon('envelope')
+
+  section#works.works
+    h2 Our awesome works
+
+    .works-filter
+      each cat, i in categories
+        input(type="radio" name="portfolio-filter" id="filter-${cat}" checked=(i === 0))
+        label.works-filter__label(for="filter-${cat}") #{cat}
+
+    ul.works-grid
+      each work, i in works
+        li.works-grid__item(class="works-grid__item--${work.category}" data-category=work.category)
+          +work-card(work)

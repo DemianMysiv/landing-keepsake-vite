@@ -1,0 +1,8 @@
+mixin work-card(work)
+  article.work-card
+    +picture(work.image, 'jpg', work.alt)
+    .work-card__overlay
+      .work-card__plus +
+      h3.work-card__title #{work.title}
+      .work-card__divider
+      span.work-card__category #{work.category}

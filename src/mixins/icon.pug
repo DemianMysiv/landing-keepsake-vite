@@ -1,0 +1,9 @@
+mixin icon(name)
+  case name
+    when 'heart'
+      span.icon-heart ??
+    when 'envelope'
+      span.icon-envelope ??
+    default
+      svg.icon(class="icon-${name}")&attributes(attributes)
+        use(href="#icon-${name}")
