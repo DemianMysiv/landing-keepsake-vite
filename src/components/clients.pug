@@ -1,0 +1,19 @@
+section.clients-testimonials.section-padding
+  .container
+    h2.section-title CLIENTS & KIND WORDS
+    p.section-desc Some of the teams that trusted us with their brands.
+    .clients-grid
+      each client in clients
+        img(src=`images/logo-${client}.webp` width="120" height="40" alt=`${client} logo` loading="lazy")
+    .testimonial-card
+      .quote-icon “
+      p.testimonial-text Keepsake turned a vague brief into a brand we are proud of. The team was fast, honest about trade-offs and obsessed with the details.
+      .author-block
+        .author-avatar OM
+        .author-info
+          strong OLENA MARCHENKO
+          span Marketing Lead, Nordly
+        .slider-dots
+          span.dot.active
+          span.dot
+          span.dot

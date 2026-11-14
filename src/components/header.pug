@@ -1,0 +1,30 @@
+header.header
+  .container.header-container
+    a.logo(href="#top" aria-label="Keepsake Home")
+      span K
+      | eepsake
+    .nav-wrapper.desktop-navigation
+      nav.main-nav(aria-label="Main navigation")
+        ul
+          each link, i in navLinks
+            li: a(href=link.href class=(i===0 ? "active" : "") aria-current=(i===0 ? "page" : null)) #{link.text}
+      button.btn-favourites(type="button" aria-label="Favourites")
+        svg(viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true")
+          path(d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z")
+    button.burger-btn(type="button" popovertarget="mobile-drawer" popovertargetaction="toggle" aria-controls="mobile-drawer" aria-label="Toggle menu")
+      span.burger-icon(aria-hidden="true")
+  #mobile-drawer.mobile-drawer(popover="auto")
+    nav.mobile-nav(aria-label="Mobile navigation")
+      ul
+        each link in navLinks
+          li: a(href=link.href) #{link.text}
+    .mobile-menu-actions
+      a.btn.btn-primary.btn-full-mobile(href="#contact") CONTACT US
+      button.btn.btn-secondary.btn-full-mobile(type="button") FAVOURITES
+    .mobile-menu-footer
+      p.say-hello SAY HELLO
+      a(href="mailto:hello@keepsake.studio") hello@keepsake.studio
+      a(href="tel:+442079460000") +44 20 7946 0000
+      .socials
+        each social in socialLinks
+          a.social-link(href="#contact" class=social.class aria-label=social.label rel="noopener noreferrer") #{social.text}

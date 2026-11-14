@@ -1,0 +1,13 @@
+section#journal.journal.section-padding
+  .container
+    h2.section-title FROM THE JOURNAL
+    p.section-desc Notes on process, case studies and things that inspire us.
+    .journal-grid
+      each post in journalEntries
+        article.journal-post
+          img.post-img(src=`images/${post.img}.webp` alt="Abstract journal illustration" width="150" height="150" loading="lazy")
+          .post-content
+            .post-meta #{post.meta}
+            h3.post-title #{post.title}
+            p.post-excerpt #{post.text}
+            a.post-link(href="#") READ MORE &gt;

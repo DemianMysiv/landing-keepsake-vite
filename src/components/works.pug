@@ -1,0 +1,16 @@
+section#works.works.section-padding
+  .container
+    input.visually-hidden#f-all(type="radio" name="filter" checked)
+    each cat in categories.slice(1)
+      input.visually-hidden(type="radio" name="filter" id=`f-${cat}`)
+    .section-header
+      h2.section-title OUR AWESOME WORKS
+      .filter-chips
+        label.chip(for="f-all") ALL
+        each cat in categories.slice(1)
+          label.chip(for=`f-${cat}`) #{cat.toUpperCase()}
+    .works-grid
+      each work in works
+        +work-card(work)
+    .center-actions
+      button.btn.btn-secondary.btn-full-mobile LOAD MORE WORKS
