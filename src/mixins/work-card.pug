@@ -1,6 +1,6 @@
 mixin work-card(work)
   article.card(data-category=work.category)
-    img(src=`images/${work.image}.webp` alt=work.title loading="lazy" width="350" height="276")
+    +picture(work.image, 'jpg', work.title)
     .card-overlay(tabindex="0" role="group" aria-label="Project information")
       span.btn-teal-plus(aria-hidden="true") +
       h3 #{work.title}
