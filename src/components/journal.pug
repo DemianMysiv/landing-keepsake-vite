@@ -5,7 +5,7 @@ section#journal.journal.section-padding
     .journal-grid
       each post in journalEntries
         article.journal-post
-          img.post-img(src=`images/${post.img}.webp` alt="Abstract journal illustration" width="150" height="150" loading="lazy")
+          img.post-img(src=`/src/assets/images/${post.img}.webp` alt="Abstract journal illustration" width="150" height="150" loading="lazy")
           .post-content
             .post-meta #{post.meta}
             h3.post-title #{post.title}
