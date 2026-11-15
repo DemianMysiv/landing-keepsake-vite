@@ -1,20 +1,37 @@
 {
-    "name":  "vite-pug-template",
-    "private":  true,
-    "version":  "0.0.0",
-    "type":  "module",
-    "scripts":  {
-                    "dev":  "vite",
-                    "build":  "vite build",
-                    "preview":  "vite preview",
-                    "images":  "node process-images.js"
-                },
-    "devDependencies":  {
-                            "@vituum/vite-plugin-pug":  "^1.1.0",
-                            "autoprefixer":  "^10.6.2",
-                            "sass":  "^1",
-                            "sharp":  "^0.35.5",
-                            "vite":  "8.3.3",
-                            "vituum":  "^1.2.0"
-                        }
+  "name": "vite-pug-template",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "images": "node process-images.js",
+    "format": "prettier --write \"src/**/*.{html,scss,js}\"",
+    "lint": "stylelint \"src/**/*.scss\" --fix",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@vituum/vite-plugin-pug": "^1.1.0",
+    "autoprefixer": "^10.6.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.6.1",
+    "prettier": "^3.10.1",
+    "sass": "^1",
+    "sharp": "^0.35.5",
+    "stylelint": "^18.0.0",
+    "stylelint-config-standard-scss": "^18.0.0",
+    "vite": "8.3.3",
+    "vituum": "^1.2.0"
+  },
+  "lint-staged": {
+    "*.{html,js}": [
+      "prettier --write"
+    ],
+    "*.scss": [
+      "stylelint --fix",
+      "prettier --write"
+    ]
+  }
 }
