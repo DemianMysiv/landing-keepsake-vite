@@ -1,22 +1,36 @@
-@use "../abstracts" as *;
+@use '../abstracts' as *;
 
 :root {
-  @each $name, $value in $colors {
-    --color-#{$name}: #{$value};
-  }
-
-  @each $name, $value in $fonts {
-    --font-#{$name}: #{$value};
-  }
-
-  --gap-section: 56px;
-  --gap-container: 20px;
-  --size-header: 60px;
-  --size-icon-mobile: 72px;
-  --size-icon-desktop: 96px;
-  --size-back-to-top: 44px;
-  --gap-grid: 12px;
-  --gap-grid-desktop: 14px;
+  --color-accent: #{$color-accent};
+  --color-accent-hover: #{$color-accent-hover};
+  --color-teal: #{$color-teal};
+  --color-text-dark: #{$color-text-dark};
+  --color-text: #{$color-text};
+  --color-muted: #{$color-muted};
+  --color-bg-light: #{$color-bg-light};
+  --color-border: #{$color-border};
+  --color-footer: #{$color-footer};
+  --color-overlay: #{$color-overlay};
+  --font-heading: #{$font-heading};
+  --font-body: #{$font-body};
+  --font-logo: #{$font-logo};
+  --gap-section: #{$gap-section};
+  --gap-container: #{$gap-container};
+  --color-white: #{$color-white};
+  --color-newsletter-border: #{$color-newsletter-border};
+  --color-footer-rule: #{$color-footer-rule};
+  --color-dot: #{$color-dot};
+  --color-social-rss: #{$color-social-rss};
+  --color-social-facebook: #{$color-social-facebook};
+  --color-social-twitter: #{$color-social-twitter};
+  --color-social-dribbble: #{$color-social-dribbble};
+  --color-social-pinterest: #{$color-social-pinterest};
+  --size-header: #{$size-header};
+  --size-icon-mobile: #{$size-icon-mobile};
+  --size-icon-desktop: #{$size-icon-desktop};
+  --size-back-to-top: #{$size-back-to-top};
+  --gap-grid: #{$gap-grid};
+  --gap-grid-desktop: #{$gap-grid-desktop};
 
   @include mq(md) {
     --gap-section: 72px;
@@ -27,4 +41,52 @@
     --gap-section: 90px;
     --gap-container: 90px;
   }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--color-text);
+  background-color: var(--color-white);
+  padding-top: var(--size-header);
+}
+section[id],
+footer[id] {
+  scroll-margin-top: var(--size-header);
+}
+:focus-visible {
+  outline: 2px solid var(--color-teal);
+  outline-offset: 2px;
+}
+input:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-teal);
+  outline-offset: 2px;
+}
+a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+button {
+  font-family: inherit;
+  cursor: pointer;
+  transition: 0.3s;
+  border: none;
 }
