@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const inputDir = path.join(__dirname, 'src', 'assets', 'images');
-const outputDir = inputDir; // Зберігаємо в тій самій папке
+const outputDir = inputDir;
 
 const sizes = [400, 800];
 
@@ -16,7 +16,8 @@ async function processImages() {
     const files = fs.readdirSync(inputDir);
     
     for (const file of files) {
-      if (file.match(/\.(jpg|jpeg|png)$/i) && !file.match(/-\d+\.(jpg|jpeg|png|webp|avif)$/i)) {
+      // Додано webp у список вхідних форматів, але ігноруємо вже згенеровані -400 та -800
+      if (file.match(/\.(jpg|jpeg|png|webp)$/i) && !file.match(/-\d+\.(jpg|jpeg|png|webp|avif)$/i)) {
         const filePath = path.join(inputDir, file);
         const parsed = path.parse(file);
         const baseName = parsed.name;
