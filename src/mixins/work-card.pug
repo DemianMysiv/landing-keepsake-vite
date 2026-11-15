@@ -1,3 +1,5 @@
+include picture.pug
+
 mixin work-card(work)
   article.card(data-category=work.category)
     +picture(work.image, 'jpg', work.title)
