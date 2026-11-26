@@ -1,32 +1,5 @@
-*, *::before, *::after {
+﻿* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-a {
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-button {
-  font-family: inherit;
-  cursor: pointer;
-  transition: 0.3s;
-  border: none;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after { transition-duration: 0.01ms !important; }
 }
