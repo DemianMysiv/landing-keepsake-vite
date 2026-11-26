@@ -13,7 +13,7 @@ export default {
         },
       },
     }),
-    pug({ root: './src' }),
+    pug({ root: './src', options: { doctype: 'html' } }),
   ],
   resolve: {
     alias: {
